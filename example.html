@@ -1,0 +1,36 @@
+<input id="txtFilterCount" name="txtFilterCount" type="hidden" size="5" />
+            <table cellpadding="0" cellspacing="0" class="style1" id="Filters">
+                <tr>
+                    <td>
+                        <select id="ddlField_1">
+                            <option>Select One</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="Operation_1">                            <option>Select One</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="txtValue_1" name="txtValue_1" type="text" placeholder="Value" size="30" /></td>
+                    <td>&nbsp;
+                    </td>
+                </tr>
+            </table>
+            <div align="right">
+                <a href="#" id="addScnt">
+                    <img src="/Content/Images/add.png" border="0" /></a>
+            </div>
+<script type="text/javascript">
+        var scntDiv = $('#Filters');
+        var i = $('#Filters tr').size() + 1;
+        //alert(i);
+        $('#addScnt').live('click', function () {
+            //var tr = scntDiv('.first').html().replace(/_1/g, "_" + i);
+            var item = scntDiv.last('tr').html().replace(/_1/g, "_" + i);
+            //alert(item);
+            $(item).first().appendTo(scntDiv);
+            $("#txtFilterCount").val(i);
+            i++;
+            return false;
+        });
+    </script>
