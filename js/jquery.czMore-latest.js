@@ -5,7 +5,7 @@ Author: Yasir O. Atabani
 Website: http://www.cozeit.com
 Twitter: @yatabani
 
-MIT License, https://github.com/harvesthq/chosen/blob/master/LICENSE.md
+MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
 */
 (function ($, undefined) {
     $.fn.czMore = function (options) {
