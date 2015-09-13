@@ -37,7 +37,9 @@ Notice that the field above has "_1_" in it's name and id, this will be changed 
 In case you need to know how many fields where added in the client side the plugin drops a field with count of the number that is.
 
 ```html
-<input id="czContainer_czMore_txtCount" name="czContainer_czMore_txtCount" type="hidden" value="0" size="5" />
+<input id="czContainer_czMore_txtCount" 
+	   name="czContainer_czMore_txtCount" 
+	   type="hidden" value="0" size="5" />
 ```
 
 This field will be named after your container, so that if you use other instances of the plugin in the same page you won't see a problem
