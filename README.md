@@ -7,8 +7,8 @@ This plugin has been used in our internal systems at http://cozeit.com for more 
 
 Read the wiki for design decisions we have made and why.
 
-Quick Start
-======
+## Quick Start
+
 1. Setup HTML Template that you want to be repeated in the details, this template will be cached and removed from you page for when you really need it. as many times as you want to.
 
 	```html
@@ -44,12 +44,11 @@ In case you need to know how many fields where added in the client side the plug
 
 This field will be named after your container, so that if you use other instances of the plugin in the same page you won't see a problem
 
-Events
-======
+## Events
 
-## onAdd
+### onAdd
   This will be excuted when you add new rows or fields
-## onLoad
+### onLoad
   This will be executed sometime during loading but it's not implemented now
-## onDelete
+### onDelete
   This will be executed before deleting a row or field
