@@ -34,20 +34,20 @@ Quick Start
 
 Notice that the field above has "_1_" in it's name and id, this will be changed to the corrosponding number in the details data set, so if you add 2 there will be two fields "stock_1_product" and "stock_2_product", so you can watch for this as you process the form or do other client-side work.
 
-In case you need to know how many fields where added in the client side the plugin drops a field with count of the number that is 
+In case you need to know how many fields where added in the client side the plugin drops a field with count of the number that is.
 
-	'''html
+	```html
 	<input id="czContainer_czMore_txtCount" name="czContainer_czMore_txtCount" type="hidden" value="0" size="5" />
-	'''
+	```
 
 This field will be named after your container, so that if you use other instances of the plugin in the same page you won't see a problem
 
 Events
 ======
 
-# onAdd
+## onAdd
   This will be excuted when you add new rows or fields
-# onLoad
+## onLoad
   This will be executed sometime during loading but it's not implemented now
-# onDelete
+## onDelete
   This will be executed before deleting a row or field
