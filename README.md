@@ -19,9 +19,10 @@ Read the wiki for design decisions we have made and why.
 			</div>
 		</div>
 	</div>
+	<!-- The elements you want repeated must be wrapped in an element with id="recordset" which needs to have a parent element with id="recordset".-->
 	```
-	
-2. Add to the buttom of the page and you are done. 
+
+2. Add to the buttom of the page and you are done.
 
 	```javascript
 	<script src="js/jquery.czMore-1.5.3.2.js"></script>
@@ -37,8 +38,8 @@ Notice that the field above has "_1_" in it's name and id, this will be changed 
 In case you need to know how many fields where added in the client side the plugin drops a field with count of the number that is.
 
 ```html
-<input id="czContainer_czMore_txtCount" 
-	   name="czContainer_czMore_txtCount" 
+<input id="czContainer_czMore_txtCount"
+	   name="czContainer_czMore_txtCount"
 	   type="hidden" value="0" size="5" />
 ```
 
@@ -52,3 +53,12 @@ This field will be named after your container, so that if you use other instance
   This will be executed sometime during loading but it's not implemented now
 ### onDelete
   This will be executed before deleting a row or field
+
+## Styling
+  This plugin sets the default css for the plus and minus buttons you can disable
+  the styling like the example below and  then add your own styles using the
+`.btnPlus` and `.btnMinus` css classes
+
+```javascript
+		$('#czContainer').czMore({styleOverride: true})
+```
