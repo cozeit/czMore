@@ -8,7 +8,7 @@ A JQuery Plugin, that is used to add more fields to a form, it's used when you a
 
 This plugin has been used in our internal systems at [Cozeit, Inc](http://cozeit.com) for more than 4 years now, it's very basic, and can be enhanced, but the core functions are very stable and easy to use for us.
 
-Check out this [Demo](http://cozeit.com/czMore/)
+Check out this [Demo](http://cozeit.com/czMore/example.html)
 
 ## Quick Start
 
