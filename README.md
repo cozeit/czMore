@@ -19,7 +19,7 @@ Read the wiki for design decisions we have made and why.
 			</div>
 		</div>
 	</div>
-	<!-- The elements you want repeated must be wrapped in an element with id="recordset" which needs to have a parent element with id="recordset".-->
+	<!-- The elements you want repeated must be wrapped in an element with id="recordset" -->
 	```
 
 2. Add to the buttom of the page and you are done.
@@ -37,11 +37,11 @@ Notice that the field above has "_1_" in it's name and id, this will be changed 
 
 In case you need to know how many fields where added in the client side the plugin drops a field with count of the number that is.
 
-```html
-<input id="czContainer_czMore_txtCount"
+	```html
+	<input id="czContainer_czMore_txtCount"
 	   name="czContainer_czMore_txtCount"
 	   type="hidden" value="0" size="5" />
-```
+	```
 
 This field will be named after your container, so that if you use other instances of the plugin in the same page you won't see a problem
 
@@ -53,7 +53,8 @@ This field will be named after your container, so that if you use other instance
 ```javascript  
   $("#czContainer").czMore({
         onAdd: function(index) {
-            //Do more events here like triggering select2, autocompelete, or other things you might want to do
+            //Do more events here like triggering select2, autocompelete, and/or any more things,
+	    //you might want to do after an fresh recordset is attached
          },
     });
 ```
@@ -64,7 +65,8 @@ This field will be named after your container, so that if you use other instance
   $("#czContainer").czMore({
         onLoad: function(index) {
             //Mainly used for then you have a number of record sets that are passed/loaded into html 
-	    //before trigering the czMore plugin, so when looping on the recordsets this event will trigger each time
+	    //before trigering the czMore plugin, so when looping on the recordsets this event
+	    //will trigger each time it finds an container with id=recordset
 	    },
     });
 ```
