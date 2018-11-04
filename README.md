@@ -48,11 +48,37 @@ This field will be named after your container, so that if you use other instance
 ## Events
 
 ### onAdd
-  This will be excuted when you add new rows or fields
+  This will be excuted when you add new rows or fields, this event will bass in the index of the row that is just added
+  
+```javascript  
+  $("#czContainer").czMore({
+        onAdd: function(index) {
+            //Do more events here like triggering select2, autocompelete, or other things you might want to do
+         },
+    });
+```
 ### onLoad
-  This will be executed sometime during loading but it's not implemented now
+  This will be executed after loading each element, this event will bass in the index of the row that is just added
+
+```javascript  
+  $("#czContainer").czMore({
+        onLoad: function(index) {
+            //Mainly used for then you have a number of record sets that are passed/loaded into html 
+	    //before trigering the czMore plugin, so when looping on the recordsets this event will trigger each time
+	    },
+    });
+```
 ### onDelete
-  This will be executed before deleting a row or field
+  This will be executed before deleting a row or field, this event will bass in the `data-id` attribute of the row.
+  
+```javascript  
+  $("#czContainer").czMore({
+        onDelete: function(id) {
+            //When a recordset is deleted the data-id attribute is passed to this funciton so you can for 
+	    //example append it to a list and have it processed by the server after the records are saved
+         },
+    });
+```
 
 ## Styling
   This plugin sets the default css for the plus and minus buttons you can disable
