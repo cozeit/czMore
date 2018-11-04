@@ -37,11 +37,11 @@ Notice that the field above has "_1_" in it's name and id, this will be changed 
 
 In case you need to know how many fields where added in the client side the plugin drops a field with count of the number that is.
 
-	```html
+```html
 	<input id="czContainer_czMore_txtCount"
 	   name="czContainer_czMore_txtCount"
 	   type="hidden" value="0" size="5" />
-	```
+```
 
 This field will be named after your container, so that if you use other instances of the plugin in the same page you won't see a problem
 
@@ -51,10 +51,10 @@ This field will be named after your container, so that if you use other instance
   This will be excuted when you add new rows or fields, this event will bass in the index of the row that is just added
   
 ```javascript  
-  $("#czContainer").czMore({
-        onAdd: function(index) {
-            //Do more events here like triggering select2, autocompelete, and/or any more things,
-	    //you might want to do after an fresh recordset is attached
+	$("#czContainer").czMore({
+		onAdd: function(index) {
+			//Do more events here like triggering select2, autocompelete, and/or any more things,
+	    	//you might want to do after an fresh recordset is attached
          },
     });
 ```
@@ -62,7 +62,7 @@ This field will be named after your container, so that if you use other instance
   This will be executed after loading each element, this event will bass in the index of the row that is just added
 
 ```javascript  
-  $("#czContainer").czMore({
+	$("#czContainer").czMore({
         onLoad: function(index) {
             //Mainly used for then you have a number of record sets that are passed/loaded into html 
 	    //before trigering the czMore plugin, so when looping on the recordsets this event
@@ -74,10 +74,10 @@ This field will be named after your container, so that if you use other instance
   This will be executed before deleting a row or field, this event will bass in the `data-id` attribute of the row.
   
 ```javascript  
-  $("#czContainer").czMore({
+	$("#czContainer").czMore({
         onDelete: function(id) {
             //When a recordset is deleted the data-id attribute is passed to this funciton so you can for 
-	    //example append it to a list and have it processed by the server after the records are saved
+		    //example append it to a list and have it processed by the server after the records are saved
          },
     });
 ```
@@ -88,5 +88,5 @@ This field will be named after your container, so that if you use other instance
 `.btnPlus` and `.btnMinus` css classes
 
 ```javascript
-		$('#czContainer').czMore({styleOverride: true})
+	$('#czContainer').czMore({styleOverride: true})
 ```
