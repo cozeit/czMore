@@ -48,7 +48,7 @@ This field will be named after your container, so that if you use other instance
 ## Events
 
 ### onAdd
-  This will be excuted when you add new rows or fields, this event will bass in the index of the row that is just added
+  This will be excuted when you add new rows or fields, this event will pass in the index of the row that is just added
   
 ```javascript  
 $("#czContainer").czMore({
@@ -59,7 +59,7 @@ $("#czContainer").czMore({
 });
 ```
 ### onLoad
-  This will be executed after loading each element, this event will bass in the index of the row that is just added
+  This will be executed after loading each element, this event will pass in the index of the row that is just added
 
 ```javascript  
 $("#czContainer").czMore({
@@ -71,7 +71,7 @@ $("#czContainer").czMore({
 });
 ```
 ### onDelete
-  This will be executed before deleting a row or field, this event will bass in the `data-id` attribute of the row.
+  This will be executed before deleting a row or field, this event will pass in the `data-id` attribute of the row.
   
 ```javascript  
 $("#czContainer").czMore({
