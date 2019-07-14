@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MSM - Cozeit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+
+        .navbar-brand img {
+            margin-top: -5px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+    <!-- Latest compiled and minified JavaScript -->
+</head>
+<body>
+    <div class="well clearfix">
+        <div id="czContainer">
+            <div id="first">
+                <div class="recordset">
+                    <div class="fieldRow clearfix">
+                        <div class="col-md-5">
+                            <div id="div_id_stock_1_service" class="form-group">
+                                <label for="id_stock_1_product" class="control-label  requiredField">
+                                    Product<span class="asteriskField">*</span>
+                                </label><div class="controls ">
+                                            <input type="text" name="stock_1_product" id="id_stock_1_product" class="textinput form-control" />
+                                </div>
+                            </div>
+                        </div><div class="col-md-3">
+                            <div id="div_id_stock_1_unit" class="form-group">
+                                <label for="id_stock_1_unit" class="control-label  requiredField">
+                                    Unit<span class="asteriskField">*</span>
+                                </label><div class="controls "><select class="select form-control" id="id_stock_1_unit" name="stock_1_unit"><option value="" selected="selected">---------</option><option value="1">1/2liter</option></select></div>
+                            </div>
+                        </div><div class="col-md-3">
+                            <div id="div_id_stock_1_quantity" class="form-group">
+                                <label for="id_stock_1_quantity" class="control-label  requiredField">
+                                    Quantity<span class="asteriskField">*</span>
+                                </label><div class="controls "><input class="numberinput form-control" id="id_stock_1_quantity" name="stock_1_quantity" step="0.01" type="number" /> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/jquery.czMore-latest.js"></script>
+    <script type="text/javascript">
+        //One-to-many relationship plugin by Yasir O. Atabani. Copyrights Reserved.
+        $("#czContainer").czMore({
+            max: 5
+        });
+    </script>
+</body>
+</html>
