@@ -3,7 +3,7 @@ czMore
 
 A JQuery Plugin, that is used to add more fields to a form, it's used when you are adding to a detail on a master file.
 
-This plugin has been used in our internal systems at [Cozeit, Inc.](http://cozeit.com) for more than 4 years now, it's very basic, and can be enhanced, but the core functions are very stable and easy to use for us.
+This plugin has been used in our internal systems at http://cozeit.com for more than 4 years now, it's very basic, and can be enhanced, but the core functions are very stable and easy to use for us.
 
 Read the wiki for design decisions we have made and why.
 
@@ -89,22 +89,4 @@ $("#czContainer").czMore({
 
 ```javascript
 $('#czContainer').czMore({styleOverride: true})
-```
-
-## Max limit
-  You can use this option to limit the number of recordsets that can be added
-```javascript
-$("#czContainer").czMore({
-    max: 5
-});
-```
-
-## Integrating into other libraries
-  You can integrate with other libraries by running the code after the DOM objects are added
-```javascript
-$("#czContainer").czMore({
-    onAdd: function(index) {
-        $("input[id$='_suffix']").select2();
-    }
-});
 ```
