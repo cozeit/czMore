@@ -1,11 +1,14 @@
+---
+layout: index
+---
 czMore
 ======
 
 A JQuery Plugin, that is used to add more fields to a form, it's used when you are adding to a detail on a master file.
 
-This plugin has been used in our internal systems at http://cozeit.com for more than 4 years now, it's very basic, and can be enhanced, but the core functions are very stable and easy to use for us.
+This plugin has been used in our internal systems at [Cozeit, Inc](http://cozeit.com) for more than 6 years now, it's very basic, and can be enhanced, but the core functions are very stable and easy to use for us.
 
-Read the wiki for design decisions we have made and why.
+Check out this [Demo](http://cozeit.com/czMore/example.html)
 
 ## Quick Start
 
