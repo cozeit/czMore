@@ -8,16 +8,19 @@ Twitter: @yatabani
 MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
 */
 (function ($, undefined) {
+    "use strict";
+
     $.fn.czMore = function (options) {
 
         //Set defauls for the control
         var defaults = {
-            max: 5,
+            max: 50,
             min: 0,
             onLoad: null,
             onAdd: null,
             onDelete: null,
             styleOverride: false,
+            countFieldPrefix: '_czMore_txtCount',
         };
         //Update unset options with defaults if needed
         var options = $.extend(defaults, options);
@@ -30,12 +33,13 @@ MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
         $(this).bind("onDelete", function (event, data) {
             options.onDelete.call(event, data);
         });
+
         //Executing functionality on all selected elements
         return this.each(function () {
             var obj = $(this);
-            var i = obj.children(".recordset").length;
+            var i = recordsetCount();
             var divPlus = '<div id="btnPlus" class="btnPlus"/>';
-            var count = '<input id="' + this.id + '_czMore_txtCount" name="' + this.id + '_czMore_txtCount" type="hidden" value="0" size="5" />';
+            var count = '<input id="' + this.id + options.countFieldPrefix + '" name="' + this.id + options.countFieldPrefix + '" type="hidden" value="0" size="5" />';
 
             obj.before(count);
             var recordset = obj.children("#first");
@@ -58,7 +62,10 @@ MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
 
             if (recordset.length) {
                 obj.siblings("#btnPlus").click(function () {
-                    var i = obj.children(".recordset").length;
+                    if (isMaxRecordset()){
+                        return false;
+                    }
+                    var i = recordsetCount();
                     var item = recordset.clone().html();
                     i++;
                     item = item.replace(/\[([0-9]\d{0})\]/g, "[" + i + "]");
@@ -74,7 +81,7 @@ MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
                         obj.trigger("onAdd", i);
                     }
 
-                    obj.siblings("input[name$='czMore_txtCount']").val(i);
+                    obj.siblings("input[name$='" + options.countFieldPrefix + "']").val(i);
                     return false;
                 });
                 recordset.remove();
@@ -127,17 +134,25 @@ MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
 
             function minusClick(recordset) {
                 $(recordset).children("#btnMinus").click(function () {
-                    var i = obj.children(".recordset").length;
+                    var i = recordsetCount();
                     var id = $(recordset).attr("data-id")
                     $(recordset).remove();
                     resetNumbering();
-                    obj.siblings("input[name$='czMore_txtCount']").val(obj.children(".recordset").length);
+                    obj.siblings("input[name$='" + option.countFieldPrefix + "']").val(obj.children(".recordset").length);
                     i--;
                     if (options.onDelete != null) {
                         if (id != null)
                             obj.trigger("onDelete", id);
                     }
                 });
+            }
+
+            function recordsetCount(){
+                return obj.children(".recordset").length;
+            }
+
+            function isMaxRecordset(){
+                return recordsetCount() >= options.max;
             }
         });
     };
