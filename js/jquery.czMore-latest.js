@@ -104,8 +104,8 @@ MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
             function resetNumbering() {
                 $(obj).children(".recordset").each(function (index, element) {
                    $(element).find('input:text, input:password, input:file, select, textarea').each(function(){
-                        old_name = this.name;
-                        new_name = old_name.replace(/\_([0-9]\d{0})\_/g, "_" + (index + 1) + "_");
+                        var old_name = this.name;
+                        var new_name = old_name.replace(/\_([0-9]\d{0})\_/g, "_" + (index + 1) + "_");
                         this.id = this.name = new_name;
                         //alert(this.name);
                     });
@@ -138,7 +138,7 @@ MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
                     var id = $(recordset).attr("data-id")
                     $(recordset).remove();
                     resetNumbering();
-                    obj.siblings("input[name$='" + option.countFieldPrefix + "']").val(obj.children(".recordset").length);
+                    obj.siblings("input[name$='" + options.countFieldPrefix + "']").val(obj.children(".recordset").length);
                     i--;
                     if (options.onDelete != null) {
                         if (id != null)
