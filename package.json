@@ -1,0 +1,29 @@
+{
+  "name": "czmore",
+  "version": "1.6.0",
+  "description": "A JQuery Plugin, that is used to add more fields to a form, it's used when you are adding to a detail on a master file",
+  "main": "js/jquery.czMore-latest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cozeit/czMore.git"
+  },
+  "keywords": [
+    "Master",
+    "Detail",
+    "jQuery",
+    "Records",
+    "Plus",
+    "More",
+    "Add"
+  ],
+  "author": "Yasir O. Atabani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cozeit/czMore/issues"
+  },
+  "homepage": "https://github.com/cozeit/czMore#readme"
+}
+
