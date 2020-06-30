@@ -63,6 +63,7 @@ MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
             if (recordset.length) {
                 obj.siblings("#btnPlus").click(function () {
                     if (isMaxRecordset()){
+                        alert('Max Limit Reached');
                         return false;
                     }
                     var i = recordsetCount();
